@@ -18,7 +18,7 @@ func main() {
 	envVars := os.Environ()
 
 	// Use gnome-terminal to open Vim with the specified file
-	cmd := exec.Command("gnome-terminal", "--", "zsh", "-c", fmt.Sprintf("vim %s; exec zsh", fileName))
+	cmd := exec.Command("gnome-terminal","--full-screen", "--", "zsh", "-c", fmt.Sprintf("vim %s; exec zsh", fileName))
 	cmd.Env = envVars
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
